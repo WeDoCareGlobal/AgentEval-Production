@@ -8,11 +8,15 @@ Measures agent performance (latency, token usage, success rate, error classifica
 and traces every tool call (allowed / denied / approval).
 """
 
+from __future__ import annotations
+
 import hashlib
 import json
 import threading
 from dataclasses import asdict, dataclass, field
-from datetime import UTC, datetime
+from datetime import datetime, timezone
+
+UTC = timezone.utc
 from enum import Enum
 from typing import Any
 
